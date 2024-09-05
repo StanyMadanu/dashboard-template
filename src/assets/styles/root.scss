@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  // theme colors
+  --primary-color: 62, 83, 160; //#3e53a0
+  --secondary-color: 90, 119, 223; //#5a77df
+
+  //content bg colors
+  --body-bg: 236, 238, 240; //#eceef0
+  --card-bg: 250, 250, 250; //#fafafa
+
+  //text colors
+  --fx-white: 255, 255, 255; //#fff
+
+  --text-default-color: 8, 17, 47;
+  --white-color: 255, 255, 255; //#fff
+
+  --text-secondary-color: 8, 17, 47; //#08112f
+  --text-muted: 236, 238, 240; //#eceef0
+
+  --border-color: 50, 57, 84;
+
+  // use this colors not vars only colors for darkmode
+  --dark-primary-color: #323954; //#323954
+  --dark-secondary-color: #262e4b; //#262e4b
+}
+
+.dark {
+  --primary-color: 50, 57, 84; //#323954
+  --body-bg: 38, 46, 75; //#262e4b
+  --card-bg: 50, 57, 84; //#323954
+  --text-default-color: 255, 255, 255;
+}
+
+.tx-white {
+  color: rgb(var(--fx-white));
+}
+
+// .tx-black {
+//   color: rgb(var(--text-secondary-color));
+// }
+
+.tx-muted {
+  color: rgb(var(--text-muted));
+}
+
+* {
+  font-family: "Noto Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(var(--secondary-color));
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: rgb(var(--body-bg));
+  color: rgb(var(--text-default-color));
+  // cursor: url("../images/cursor.png") 16 16, auto;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.card {
+  border: 0;
+  border-radius: 1.2rem;
+  background-color: rgb(var(--card-bg));
+  // box-shadow: var();
+  color: rgb(var(--text-default-color));
+  position: relative;
+  margin-block-end: 1.5rem;
+  width: 100%;
+}
+
+.mt-6 {
+  margin-top: 5rem;
+}
+// font-size: calc(1.325rem + .9vw) !important;
+
+.fw-normal {
+  font-weight: 300;
+}
+
+.fw-semibold {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.main-container {
+  width: 100%;
+}

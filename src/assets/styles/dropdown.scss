@@ -1,0 +1,20 @@
+.btn-secondary {
+  --bs-btn-color: #000000;
+  --bs-btn-bg: var(--btn-bg-color);
+  --bs-btn-border-color: unset;
+  --bs-btn-hover-color: #000000;
+  --bs-btn-hover-bg: var(--btn-bg-color);
+  --bs-btn-hover-border-color: var(--btn-bg-color);
+  --bs-btn-focus-shadow-rgb: 130;
+  --bs-btn-active-color: #000000;
+  --bs-btn-active-bg: var(--btn-bg-color);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000000;
+  --bs-btn-disabled-bg: var(--btn-bg-color);
+  --bs-btn-disabled-border-color: var(--btn-bg-color);
+  padding: 1px 10px;
+  font-size: 13px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+}

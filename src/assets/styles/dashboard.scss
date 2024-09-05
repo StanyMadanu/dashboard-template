@@ -1,0 +1,68 @@
+.dashboard {
+  .welcome-image {
+    width: 40%;
+  }
+
+  .performance {
+  }
+
+  .visit {
+  }
+
+  .teachers {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .calender {
+    position: relative;
+    height: 60vh;
+    overflow: hidden scroll;
+    scrollbar-width: none;
+
+    .calender-header {
+      position: sticky;
+      top: 0;
+      overflow: auto hidden;
+      min-height: 20px;
+      background-color: rgb(var(--card-bg));
+    }
+
+    .calender-active-box {
+      border-bottom: 3px dotted gray;
+      padding-bottom: 1.5rem;
+    }
+
+    .eventImg {
+      width: 25px;
+      height: 25px;
+      background-color: rgb(var(--card-bg));
+      background-color: lightgray;
+      border-radius: 50%;
+    }
+
+    .event-box-active {
+      background-color: var(--light-blue);
+      border-radius: 10px;
+
+      .eventImg {
+        background-color: rgb(var(--card-bg));
+      }
+    }
+
+    .event-box {
+      background-color: rgb(var(--card-bg));
+      border-radius: 10px;
+    }
+  }
+
+  .upcoming-events {
+    .three-dots {
+      cursor: pointer;
+      transform: rotate(272deg);
+    }
+  }
+}

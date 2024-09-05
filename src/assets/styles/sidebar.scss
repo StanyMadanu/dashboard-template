@@ -1,0 +1,138 @@
+// sidebar
+.navigation {
+  top: 0;
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  background: rgb(var(--primary-color));
+  border-left: 10px solid rgb(var(--primary-color));
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transition: 0.5s;
+  overflow: hidden;
+  left: 0;
+  z-index: 99;
+
+  &.active {
+    width: 65px;
+    .title {
+      display: none;
+    }
+  }
+
+  .logo-brand {
+    margin-bottom: 15px;
+    height: 60px;
+    pointer-events: none;
+  }
+
+  ul {
+    width: 100%;
+    padding-left: 0;
+    height: 95vh;
+    scrollbar-width: none;
+    overflow: hidden auto;
+    padding-top: 1rem;
+
+    li {
+      width: 100%;
+      list-style-type: none;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        color: rgb(var(--fx-white));
+
+        .icon {
+          // position: relative;
+          display: block;
+          min-width: 60px;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+        }
+
+        .title {
+          // position: relative;
+          display: block;
+          padding: 0 10px;
+          height: 60px;
+          line-height: 60px;
+          text-align: start;
+          white-space: nowrap;
+        }
+      }
+
+      &:hover {
+        background-color: rgb(var(--body-bg));
+
+        a {
+          color: rgb(var(--text-default-color));
+        }
+      }
+    }
+  }
+}
+
+.sidebar-link.active {
+  background-color: rgb(var(--body-bg));
+
+  a {
+    color: rgb(var(--text-default-color));
+  }
+}
+
+// curve outside
+.navigation {
+  ul {
+    .sidebar-link {
+      &:is(:hover, .active, :focus) {
+        a {
+          &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -50px;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: 35px 35px 0 10px rgb(var(--body-bg));
+            pointer-events: none;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -50px;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: 35px -35px 0 10px rgb(var(--body-bg));
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991.9px) {
+  .navigation {
+    width: 0px;
+    border-left: 0;
+
+    .title {
+      display: none;
+    }
+  }
+  .main-body {
+    margin-left: 0px;
+  }
+}

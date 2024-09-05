@@ -1,0 +1,16 @@
+.main-body {
+  margin-top: 6rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .main-body {
+    margin-top: 6rem;
+    width: calc(100% - 300px);
+    transition: 0.5s;
+    margin-left: 300px;
+    &.active {
+      width: calc(100% - 80px);
+      margin-left: 80px;
+    }
+  }
+}
