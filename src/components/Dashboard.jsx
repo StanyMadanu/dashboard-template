@@ -55,10 +55,10 @@ const Dashboard = () => {
   return (
     <section className="dashboard mt-4">
       <div className="row">
-        <div className="col-xl-8 col-lg-8 col-md-8">
+        <div className="col-xl-8 col-lg-8 col-md-12">
           <div className="row">
             <div className="col-xl-12 mb-3">
-              <div className="card">
+              <div className="card card-2">
                 <div className="card-body">
                   <div className="d-flex justify-content-between align-items-center gap-4">
                     <div className="">
@@ -83,7 +83,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="col-xl-7 mt-3">
+            <div className="col-xl-8 col-lg-8 col-md-8 col-12 mt-3">
               <div className="d-flex justify-content-between mb-2">
                 <h6 className="text-capitalize fw-semibold">performance</h6>
                 <Dropdown listData={months} />
@@ -171,7 +171,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div className="col-xl-5 mt-3">
+            <div className="col-xl-4 col-lg-4 col-md-4 col-12 mt-3">
               <div className="d-flex justify-content-between mb-2 visit">
                 <h6 className="fw-semibold">My visit</h6>
                 <Dropdown listData={months} />
@@ -179,9 +179,12 @@ const Dashboard = () => {
 
               <div className="card">
                 <div className="card-body">
-                  <div className="row justify-content-between align-items-center">
+                  <div className="d-flex justify-content-between align-items-center row-gap-4 flex-wrap">
                     {doughnutData.map((chartData) => (
-                      <div key={chartData.title} className="col-xl-6">
+                      <div
+                        key={chartData.title}
+                        className="w-50 d-flex flex-column justify-content-center align-items-center"
+                      >
                         <DoughnutChart chartData={chartData} />
                       </div>
                     ))}
@@ -195,7 +198,7 @@ const Dashboard = () => {
         </div>
 
         {/* calender */}
-        <div className="col-xl-4 col-lg-4 col-md-8">
+        <div className="col-xl-4 col-lg-4 col-md-12">
           <div className="card">
             <div className="card-body">
               <div className="calender d-flex flex-column gap-3">

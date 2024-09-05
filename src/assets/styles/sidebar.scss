@@ -1,23 +1,30 @@
 // sidebar
+
+.cross-mark {
+  position: absolute;
+  top: 0.8rem;
+  z-index: 99999999;
+  left: 13.5rem;
+  cursor: pointer;
+}
+
 .navigation {
   top: 0;
   position: fixed;
-  width: 300px;
+  // width: 300px;
+  width: 280px;
   height: 100vh;
   background: rgb(var(--primary-color));
-  border-left: 10px solid rgb(var(--primary-color));
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   transition: 0.5s;
   overflow: hidden;
   left: 0;
-  z-index: 99;
+  z-index: 999999;
 
   &.active {
-    width: 65px;
-    .title {
-      display: none;
-    }
+    width: 61px;
+    background: transparent;
   }
 
   .logo-brand {
@@ -26,15 +33,16 @@
     pointer-events: none;
   }
 
-  ul {
+  .sidebar-label-ul {
     width: 100%;
     padding-left: 0;
     height: 95vh;
     scrollbar-width: none;
     overflow: hidden auto;
     padding-top: 1rem;
+    margin-left: 4px;
 
-    li {
+    li.sidebar-link {
       width: 100%;
       list-style-type: none;
       border-top-left-radius: 30px;
@@ -44,25 +52,14 @@
         position: relative;
         display: block;
         width: 100%;
-        display: flex;
+        font-weight: 500;
         text-decoration: none;
-        color: rgb(var(--fx-white));
-
-        .icon {
-          // position: relative;
-          display: block;
-          min-width: 60px;
-          height: 60px;
-          line-height: 60px;
-          text-align: center;
-        }
 
         .title {
-          // position: relative;
           display: block;
-          padding: 0 10px;
-          height: 60px;
-          line-height: 60px;
+          padding: 0 15px;
+          height: 55px;
+          line-height: 55px;
           text-align: start;
           white-space: nowrap;
         }
@@ -87,6 +84,35 @@
   }
 }
 
+.icons-sidebar {
+  background-color: rgb(var(--secondary-color));
+  border-radius: 30px;
+  width: fit-content !important;
+  height: 100vh;
+  padding-left: 0;
+  padding-top: 5.6rem;
+
+  .link-icon {
+    display: block;
+    min-width: 60px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(var(--primary-color));
+      border-radius: 50%;
+      transition: 0.5s ease all;
+    }
+
+    &.active {
+      box-shadow: inset 5px 0px rgb(var(--fx-white));
+      transition: 0.5s ease all;
+    }
+  }
+}
+
 // curve outside
 .navigation {
   ul {
@@ -96,7 +122,7 @@
           &::before {
             content: "";
             position: absolute;
-            right: 0;
+            right: 4px;
             top: -50px;
             width: 50px;
             height: 50px;
@@ -108,7 +134,7 @@
           &::after {
             content: "";
             position: absolute;
-            right: 0;
+            right: 4px;
             bottom: -50px;
             width: 50px;
             height: 50px;
@@ -126,10 +152,14 @@
 @media (max-width: 991.9px) {
   .navigation {
     width: 0px;
-    border-left: 0;
+
+    &.active {
+      width: 300px;
+      background: rgb(var(--primary-color));
+    }
 
     .title {
-      display: none;
+      // display: none;
     }
   }
   .main-body {

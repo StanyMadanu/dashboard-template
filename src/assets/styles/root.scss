@@ -8,6 +8,7 @@
   //content bg colors
   --body-bg: 236, 238, 240; //#eceef0
   --card-bg: 250, 250, 250; //#fafafa
+  --card-bg-2: 250, 250, 250; //#5a77df
 
   //text colors
   --fx-white: 255, 255, 255; //#fff
@@ -30,6 +31,8 @@
   --body-bg: 38, 46, 75; //#262e4b
   --card-bg: 50, 57, 84; //#323954
   --text-default-color: 255, 255, 255;
+  --secondary-color: 72, 79, 107; //#484f6b
+  --card-bg-2: 90, 119, 223; //#5a77df
 }
 
 .tx-white {
@@ -53,7 +56,7 @@
 
 a {
   text-decoration: none;
-  color: rgb(var(--secondary-color));
+  color: rgb(var(--fx-white));
 }
 
 body {
@@ -62,6 +65,19 @@ body {
   background-color: rgb(var(--body-bg));
   color: rgb(var(--text-default-color));
   // cursor: url("../images/cursor.png") 16 16, auto;
+}
+
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px rgb(var(--primary-color));
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--secondary-color));
+  border-radius: 0.625rem;
 }
 
 button {
@@ -82,6 +98,10 @@ button {
   position: relative;
   margin-block-end: 1.5rem;
   width: 100%;
+
+  &.card-2 {
+    background-color: rgb(var(--card-bg-2));
+  }
 }
 
 .mt-6 {
@@ -89,24 +109,16 @@ button {
 }
 // font-size: calc(1.325rem + .9vw) !important;
 
-.fw-normal {
-  font-weight: 300;
-}
-
-.fw-semibold {
-  font-weight: 600;
-}
-
-.fw-bold {
-  font-weight: bold;
-}
-
 .fs-12 {
   font-size: 12px;
 }
 
 .fs-15 {
   font-size: 15px;
+}
+
+.fs-21 {
+  font-size: 21px;
 }
 
 .main-container {

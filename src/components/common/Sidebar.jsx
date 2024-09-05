@@ -11,6 +11,7 @@ import { ImBooks } from "react-icons/im";
 import { FaCalendarDays } from "react-icons/fa6";
 import { BsFillFileEarmarkTextFill } from "react-icons/bs";
 import { TbBrandFiverr } from "react-icons/tb";
+import { MdOutlineClose } from "react-icons/md";
 
 const Sidebar = ({ setToggleStatus, toggleStatus }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,42 +39,64 @@ const Sidebar = ({ setToggleStatus, toggleStatus }) => {
 
   return (
     <section className="">
-      <div className={toggleStatus ? "navigation active" : "navigation"}>
-        <div className="logo-brand d-flex justify-content-center align-items-center">
-          <Link to="#!" className="tx-white">
-            <span className="icon">
-              <TbBrandFiverr />
-            </span>
-            <span className="title">Brand Name</span>
-          </Link>
-        </div>
-        <ul>
+      <div className={`d-flex navigation${toggleStatus ? " active" : ""}`}>
+        <span
+          className="cross-mark d-block d-lg-none ms-5 tx-white fs-21 fw-bold"
+          onClick={setToggleStatus}
+        >
+          <MdOutlineClose />
+        </span>
+        <ul className="icons-sidebar">
           {links.map((link, index) => (
             <li
               key={index}
-              className={
-                activeIndex === index
-                  ? "sidebar-link my-2 active"
-                  : "sidebar-link my-2"
-              }
+              className={`link-icon my-2 ${
+                activeIndex === index ? "active" : ""
+              }`}
               onClick={() => handleLink(index)}
             >
               <Link to={link.to}>
                 <span className="icon">{link.icon}</span>
-                <span className="title">{link.title}</span>
               </Link>
             </li>
           ))}
-
-          <li className="logout mt-6">
-            <Link to="#!">
-              <span className="icon">
-                <MdLogout />
-              </span>
-              <span className="title">Logout</span>
-            </Link>
-          </li>
         </ul>
+
+        <div className="w-100">
+          <div className="logo-brand d-flex justify-content-center align-items-center">
+            <Link to="#!" className="tx-white fw-bold">
+              <span className="icon">
+                <TbBrandFiverr />
+              </span>
+              <span className="title">Logo</span>
+            </Link>
+          </div>
+          <ul className="sidebar-label-ul">
+            {links.map((link, index) => (
+              <li
+                key={index}
+                className={
+                  activeIndex === index
+                    ? "sidebar-link my-2 active"
+                    : "sidebar-link my-2"
+                }
+                onClick={() => handleLink(index)}
+              >
+                <Link to={link.to}>
+                  <span className="title">{link.title}</span>
+                </Link>
+              </li>
+            ))}
+            <li className="logout mt-6 ">
+              <Link to="#!" className="d-flex ms-4 align-items-center gap-2">
+                <span className="icon">
+                  <MdLogout />
+                </span>
+                <span className="title">Logout</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );

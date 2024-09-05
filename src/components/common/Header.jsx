@@ -17,20 +17,20 @@ const Header = ({ setToggleStatus, toggleStatus }) => {
             >
               <span>{toggleStatus ? <IoMenu /> : <CgMenuRightAlt />}</span>
             </div>
-            <div className="search">
-              <label>
-                <input type="text" placeholder="Search" />
+            <div className="search d-none d-sm-block">
+              <label htmlFor="search">
                 <FiSearch />
               </label>
+              <input id="search" type="text" placeholder="Search" />
             </div>
           </div>
 
           <div className="d-flex align-items-center gap-2">
-            <div className="mail d-flex gap-3  px-3">
-              <span className="fs-2">
+            <div className="mail d-flex gap-3 px-3">
+              <span className="fs-4">
                 <IoMdMail />
               </span>
-              <span className="fs-2 notification">
+              <span className="fs-4 notification">
                 <MdNotifications />
               </span>
             </div>
