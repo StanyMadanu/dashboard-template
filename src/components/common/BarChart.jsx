@@ -51,8 +51,9 @@ const BarChart = () => {
       legend: {
         display: false,
       },
+
       title: {
-        display: true,
+        display: false,
         position: "bottom",
       },
     },

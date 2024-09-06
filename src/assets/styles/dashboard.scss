@@ -1,6 +1,7 @@
 .dashboard {
   .welcome-image {
-    width: 40%;
+    bottom: -23px;
+    right: 0;
   }
 
   .performance {
@@ -14,6 +15,12 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
+    }
+    &.events {
+      img {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 
@@ -31,38 +38,78 @@
       background-color: rgb(var(--card-bg));
     }
 
-    .calender-active-box {
-      border-bottom: 3px dotted gray;
-      padding-bottom: 1.5rem;
-    }
-
     .eventImg {
-      width: 25px;
-      height: 25px;
-      background-color: rgb(var(--card-bg));
-      background-color: lightgray;
+      width: 28px;
+      height: 28px;
+      color: rgb(var(--fx-theme-color));
+      background-color: rgb(var(--button-bg));
       border-radius: 50%;
     }
 
     .event-box-active {
-      background-color: var(--light-blue);
+      background-color: rgb(var(--fx-theme-color));
+      color: rgb(var(--fx-white));
       border-radius: 10px;
-
       .eventImg {
-        background-color: rgb(var(--card-bg));
+        background-color: rgb(var(--fx-light-gray));
       }
     }
 
+    .event-top-border {
+      position: relative;
+      border-top: 3px dashed rgb(var(--fx-black), 0.5);
+      margin-left: 2.5rem;
+      z-index: 1;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 10px;
+        top: -6px;
+        left: 0px;
+        border-radius: 50%;
+        z-index: 2;
+        background-color: #6c757d;
+      }
+    }
+
+    // .event-top-border {
+    //   position: relative;
+
+    //   &::before {
+    //     position: absolute;
+    //     content: "";
+    //     width: 100%;
+    //     height: 1px;
+    //     top: -17px;
+    //     right: 3px;
+    //     border: 2px dashed rgb(var(--fx-black), 0.5);
+    //   }
+    // }
+
     .event-box {
-      background-color: rgb(var(--card-bg));
+      position: relative;
+      background-color: rgb(var(--fx-light-gray));
+      color: rgb(var(--fx-black));
       border-radius: 10px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 4px;
+        height: 85%;
+        left: -15px;
+        background-color: rgb(var(--fx-theme2-color));
+        border-radius: 30px;
+      }
     }
   }
 
   .upcoming-events {
-    .three-dots {
-      cursor: pointer;
-      transform: rotate(272deg);
-    }
+    // .three-dots {
+    //   cursor: pointer;
+    //   transform: rotate(272deg);
+    // }
   }
 }

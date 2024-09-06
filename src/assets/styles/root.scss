@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+  --fx-theme-color: 90, 119, 223;
+  --fx-theme2-color: 62, 83, 160;
+  --fx-white: 255, 255, 255; //#fff
+  --fx-light-gray: 236, 238, 240;
+  --fx-black: 0, 0, 0;
+
   // theme colors
   --primary-color: 62, 83, 160; //#3e53a0
   --secondary-color: 90, 119, 223; //#5a77df
@@ -11,7 +17,6 @@
   --card-bg-2: 250, 250, 250; //#5a77df
 
   //text colors
-  --fx-white: 255, 255, 255; //#fff
 
   --text-default-color: 8, 17, 47;
   --white-color: 255, 255, 255; //#fff
@@ -20,6 +25,11 @@
   --text-muted: 236, 238, 240; //#eceef0
 
   --border-color: 50, 57, 84;
+
+  --button-bg: 204, 212, 222; // #ccd4de
+  --button-color: 8, 17, 47;
+
+  --a-color: 62, 83, 160;
 
   // use this colors not vars only colors for darkmode
   --dark-primary-color: #323954; //#323954
@@ -33,6 +43,7 @@
   --text-default-color: 255, 255, 255;
   --secondary-color: 72, 79, 107; //#484f6b
   --card-bg-2: 90, 119, 223; //#5a77df
+  --a-color: 255, 255, 255;
 }
 
 .tx-white {
@@ -56,7 +67,12 @@
 
 a {
   text-decoration: none;
-  color: rgb(var(--fx-white));
+  color: rgb(var(--text-default-color));
+}
+
+.a-color {
+  color: rgb(var(--a-color));
+  text-decoration: underline;
 }
 
 body {
@@ -83,10 +99,33 @@ body::-webkit-scrollbar-thumb {
 button {
   background: none;
   border: none;
-  color: white;
   font-size: 16px;
   cursor: pointer;
   outline: none;
+}
+
+.border-secondary {
+  color: rgb(var(--text-default-color));
+  border-color: rgb(var(--text-default-color)) !important;
+}
+
+.btn-secondary {
+  color: rgb(var(--button-color)) !important;
+  --bs-btn-hover-color: rgb(var(--button-color)) !important;
+  --bs-btn-active-color: rgb(var(--button-color)) !important;
+  --bs-btn-hover-bg: rgb(var(--button-bg)) !important;
+  --bs-btn-active-bg: rgb(var(--button-bg)) !important;
+  // background-color: rgb(var(--secondary-color));
+  background-color: rgb(var(--button-bg));
+}
+
+.dropdown-menu {
+  background-color: rgb(var(--card-bg));
+  // color: rgb(var(--text-default-color));
+}
+
+.dropdown-item {
+  color: rgb(var(--text-default-color));
 }
 
 .card {
@@ -113,6 +152,14 @@ button {
   font-size: 12px;
 }
 
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
 .fs-15 {
   font-size: 15px;
 }
@@ -120,6 +167,18 @@ button {
 .fs-21 {
   font-size: 21px;
 }
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.ws-1 {
+  word-spacing: -1px;
+}
+
+// .theme-color {
+//   color: rgb(var(62, 83, 160)) !important;
+// }
 
 .main-container {
   width: 100%;
