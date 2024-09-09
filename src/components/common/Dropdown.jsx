@@ -26,7 +26,7 @@ const Dropdown = ({ listData }) => {
             <li key={item}>
               <Link
                 to="#"
-                className="dropdown-item"
+                className="dropdown-item fs-13"
                 onClick={() => handleSelected(item)}
               >
                 {item}

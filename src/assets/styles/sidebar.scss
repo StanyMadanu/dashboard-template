@@ -36,7 +36,7 @@
   .sidebar-label-ul {
     width: 100%;
     padding-left: 0;
-    height: 95vh;
+    height: 87vh;
     scrollbar-width: none;
     overflow: hidden auto;
     padding-top: 1rem;
@@ -163,7 +163,7 @@
 @media (max-width: 991.9px) {
   .navigation {
     width: 0px;
-
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     &.active {
       width: 245px;
       background: rgb(var(--primary-color));

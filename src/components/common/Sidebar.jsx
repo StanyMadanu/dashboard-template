@@ -48,7 +48,7 @@ const Sidebar = ({ setToggleStatus, toggleStatus }) => {
   return (
     <section className="">
       <div
-        className={`d-flex navigation${toggleStatus ? " active" : ""}`}
+        className={`d-flex navigation ${toggleStatus ? " active" : ""}`}
         ref={sidebar}
       >
         <span
@@ -82,7 +82,7 @@ const Sidebar = ({ setToggleStatus, toggleStatus }) => {
               <span className="title">Logo</span>
             </Link>
           </div>
-          <ul className="sidebar-label-ul">
+          <ul className="sidebar-label-ul d-flex flex-column">
             {links.map((link, index) => (
               <li
                 key={index}
@@ -98,7 +98,11 @@ const Sidebar = ({ setToggleStatus, toggleStatus }) => {
                 </Link>
               </li>
             ))}
-            <li className="logout mt-6 ">
+
+            <li
+              className="logout mt-auto ms-5"
+              style={{ listStyleType: "none" }}
+            >
               <Link to="#!" className="d-flex ms-4 align-items-center gap-2">
                 <span className="icon">
                   <MdLogout />

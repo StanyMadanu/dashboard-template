@@ -62,7 +62,7 @@ const Header = ({ setToggleStatus, toggleStatus }) => {
                   <div className="d-flex align-items-center gap-2">
                     <CgProfile />
                     <li>
-                      <Link to="#!" className="dropdown-item fs-14 p-0">
+                      <Link to="#!" className="dropdown-item fs-13 p-0">
                         Profile
                       </Link>
                     </li>
@@ -71,7 +71,7 @@ const Header = ({ setToggleStatus, toggleStatus }) => {
                   <div className="d-flex align-items-center py-2 gap-2">
                     <MdLogout />
                     <li>
-                      <Link to="#!" className="dropdown-item fs-14 p-0">
+                      <Link to="#!" className="dropdown-item fs-13 p-0">
                         Logout
                       </Link>
                     </li>
@@ -79,7 +79,7 @@ const Header = ({ setToggleStatus, toggleStatus }) => {
                   <div className="d-flex align-items-center gap-2">
                     <IoMdSettings />
                     <li>
-                      <Link to="#!" className="dropdown-item fs-14 p-0">
+                      <Link to="#!" className="dropdown-item fs-13 p-0">
                         Settings
                       </Link>
                     </li>
