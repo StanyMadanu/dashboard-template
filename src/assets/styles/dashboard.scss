@@ -2,6 +2,10 @@
   .welcome-image {
     bottom: -23px;
     right: 0;
+
+    img {
+      width: clamp(298px, 4vw, 103px);
+    }
   }
 
   .performance {
@@ -111,5 +115,29 @@
     //   cursor: pointer;
     //   transform: rotate(272deg);
     // }
+  }
+}
+
+@media (max-width: 767px) {
+  .welome-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .welcome-image {
+      text-align: center;
+      position: static !important;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .dashboard {
+    .welcome-image {
+      img {
+        width: clamp(200px, 4vw, 103px);
+      }
+    }
   }
 }

@@ -62,8 +62,8 @@ const Dashboard = () => {
             <div className="col-xl-12 mt-3">
               <div className="card card-2">
                 <div className="card-body p-4">
-                  <div className="row justify-content-between">
-                    <div className="col-lg-5 col-md-5 col-sm-5">
+                  <div className="row justify-content-between welome-card">
+                    <div className="col-lg-5 col-md-5 col-sm-9">
                       <div className="d-flex flex-column row-gap-3">
                         <h5 className="mb-0 fw-bold">Hello Grace!</h5>
                         <p className="mb-0 fs-15 fw-500 ws-1">
@@ -78,13 +78,9 @@ const Dashboard = () => {
                         </Link>
                       </div>
                     </div>
-                    <div className="col-lg-6 col-md-5 col-sm-5  position-relative">
+                    <div className="col-lg-6 col-md-5 col-sm-9  position-relative">
                       <div className="welcome-image position-absolute">
-                        <img
-                          className="img-fluid"
-                          src={welcome}
-                          alt="welcome-image"
-                        />
+                        <img className="" src={welcome} alt="welcome-image" />
                       </div>
                     </div>
                   </div>
