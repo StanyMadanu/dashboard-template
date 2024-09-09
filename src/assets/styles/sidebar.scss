@@ -4,7 +4,7 @@
   position: absolute;
   top: 0.8rem;
   z-index: 99999999;
-  left: 13.5rem;
+  left: 10.5rem;
   cursor: pointer;
 }
 
@@ -165,7 +165,7 @@
     width: 0px;
 
     &.active {
-      width: 300px;
+      width: 245px;
       background: rgb(var(--primary-color));
     }
 

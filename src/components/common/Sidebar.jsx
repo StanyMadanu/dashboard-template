@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   MdLogout,
@@ -16,12 +16,20 @@ import { MdOutlineClose } from "react-icons/md";
 const Sidebar = ({ setToggleStatus, toggleStatus }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const location = useLocation();
+  const sidebar = useRef();
 
   useEffect(() => {
     const currentPath = location.pathname;
+    const mediaQuery = window.matchMedia("(max-width: 991.9px)");
+
     const index = links.findIndex((link) => link.to === currentPath);
     setActiveIndex(index === -1 ? 0 : index);
+
+    if (mediaQuery.matches) {
+      setToggleStatus();
+    }
   }, [location.pathname]);
+
   const handleLink = (index) => {
     setActiveIndex(index);
   };
@@ -39,7 +47,10 @@ const Sidebar = ({ setToggleStatus, toggleStatus }) => {
 
   return (
     <section className="">
-      <div className={`d-flex navigation${toggleStatus ? " active" : ""}`}>
+      <div
+        className={`d-flex navigation${toggleStatus ? " active" : ""}`}
+        ref={sidebar}
+      >
         <span
           className="cross-mark d-block d-lg-none ms-5 tx-white fs-21 fw-bold"
           onClick={setToggleStatus}
