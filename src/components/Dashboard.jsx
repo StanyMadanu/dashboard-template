@@ -8,6 +8,8 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { IoMdMail, IoMdTime } from "react-icons/io";
 import { GiDwarfFace } from "react-icons/gi";
 import { HiDotsVertical } from "react-icons/hi";
+import Bar from "./common/Bar";
+import CircleChart from "./common/CircleChart";
 
 const Dashboard = () => {
   const months = [
@@ -29,27 +31,27 @@ const Dashboard = () => {
 
   const doughnutData = [
     {
-      percent: "92%",
+      percent: "92",
       title: "Algorithms structures",
     },
     {
-      percent: "83%",
+      percent: "83",
       title: "Object program",
     },
     {
-      percent: "78%",
+      percent: "78",
       title: "Database program",
     },
     {
-      percent: "97%",
+      percent: "97",
       title: "Web develop",
     },
     {
-      percent: "96%",
+      percent: "96",
       title: "Mobile application",
     },
     {
-      percent: "89%",
+      percent: "89",
       title: "Machine learning",
     },
   ];
@@ -109,8 +111,31 @@ const Dashboard = () => {
                         All lessons
                       </button>
                     </div>
-                    <div className="bar-chart mt-3">
-                      <BarChart />
+                    <div className="bar-chart mt-3 d-flex">
+                      <Bar
+                        value={70}
+                        label={"Object program"}
+                        barColor={"#5a77df"}
+                        barFillColor={"#3e53a0"}
+                      />
+                      <Bar
+                        value={30}
+                        label={"Object program"}
+                        barColor={"#5a77df"}
+                        barFillColor={"#3e53a0"}
+                      />
+                      <Bar
+                        value={90}
+                        label={"Object program"}
+                        barColor={"#5a77df"}
+                        barFillColor={"#3e53a0"}
+                      />
+                      <Bar
+                        value={50}
+                        label={"Object program"}
+                        barColor={"#5a77df"}
+                        barFillColor={"#3e53a0"}
+                      />
                     </div>
                   </div>
                 </div>
@@ -196,7 +221,11 @@ const Dashboard = () => {
                         key={chartData.title}
                         className="w-50 d-flex flex-column justify-content-center align-items-center"
                       >
-                        <DoughnutChart chartData={chartData} />
+                        {/* <DoughnutChart chartData={chartData} /> */}
+                        <CircleChart
+                          percentage={chartData.percent}
+                          label={chartData.title}
+                        />
                       </div>
                     ))}
                   </div>

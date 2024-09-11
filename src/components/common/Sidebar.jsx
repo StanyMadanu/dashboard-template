@@ -42,6 +42,7 @@ const Sidebar = ({ setToggleStatus, toggleStatus }) => {
     { to: "/forum", icon: <MdOutlineForum />, title: "Forum" },
     { to: "/assessments", icon: <MdAssessment />, title: "Assessments" },
     { to: "/settings", icon: <MdSettings />, title: "Settings" },
+    { to: "/bar", icon: <MdSettings />, title: "Bar" },
     // { to: "#!", icon: <MdLogout />, title: "Logout" },
   ];
 

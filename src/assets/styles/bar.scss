@@ -1,0 +1,42 @@
+.bar-wrapper {
+  width: 100px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .bar-container {
+    width: 50px;
+    height: 200px;
+    background-color: rgb(var(--secondary-color));
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    .bar-fill {
+      width: 100%;
+      background-color: rgb(var(--primary-color));
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 14px;
+      transition: height linear 0.6s;
+    }
+  }
+
+  .bar-label {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+  }
+}

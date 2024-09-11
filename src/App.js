@@ -9,6 +9,7 @@ import Lessons from "./components/Lessons";
 import Materials from "./components/Materials";
 import Schedule from "./components/Schedule";
 import Settings from "./components/Settings";
+import Bar from "./components/common/Bar";
 
 function App() {
   const router = createBrowserRouter([
@@ -47,6 +48,10 @@ function App() {
         {
           path: "/settings",
           element: <Settings />,
+        },
+        {
+          path: "/bar",
+          element: <Bar />,
         },
         {
           path: "*",
