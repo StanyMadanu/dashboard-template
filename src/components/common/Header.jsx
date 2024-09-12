@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { MdNotifications } from "react-icons/md";
 import { IoMdMail } from "react-icons/io";
-import Dropdown from "./Dropdown";
 import { Link, useNavigate } from "react-router-dom";
 import { IoMdSettings } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
@@ -12,7 +11,7 @@ import { CgProfile } from "react-icons/cg";
 import authService from "../../services/authService";
 
 const Header = ({ setToggleStatus, toggleStatus }) => {
-  const profile = ["profile", "logout"];
+  // const profile = ["profile", "logout"];
   const navigate = useNavigate();
 
   const handleLogout = () => {

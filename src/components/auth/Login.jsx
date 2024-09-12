@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Joi from "joi-browser";
 import { publicIpv4 } from "public-ip"; // Named import for IP fetching
 import { fullBrowserVersion } from "react-device-detect"; // Get browser version
