@@ -127,9 +127,17 @@ class Login extends Form {
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
-        errors.email = ex.response.data;
-        this.setState({ errors });
-        toast.error("Invalid email or password");
+        const errorMessage = ex.response.data; // Get the error message
+
+        // Check if the error is related to email or password and assign accordingly
+        if (errorMessage.includes("Email")) {
+          errors.email = errorMessage; // Set email error
+        } else if (errorMessage.includes("Password")) {
+          errors.password = errorMessage; // Set password error
+        }
+
+        this.setState({ errors }); // Update the state with new errors
+        toast.error(errorMessage);
       } else {
         toast.error("An unexpected error occurred");
       }
@@ -176,9 +184,7 @@ class Login extends Form {
                       true
                     )}
                     {errors.email && (
-                      <div className="text-danger errorsClass">
-                        {errors.email}
-                      </div>
+                      <div className=" errorsClass">{errors.email}</div>
                     )}
                   </div>
 
@@ -202,9 +208,7 @@ class Login extends Form {
                       ></i>
                     </div>
                     {errors.password && (
-                      <div className="text-danger errorsClass">
-                        {errors.password}
-                      </div>
+                      <div className=" errorsClass">{errors.password}</div>
                     )}
                   </div>
 
