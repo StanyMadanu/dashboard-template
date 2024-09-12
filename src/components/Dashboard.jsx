@@ -1,15 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import welcome from "../assets/images/welcome.png";
 import Dropdown from "./common/Dropdown";
-import DoughnutChart from "./common/DoughnutChart";
-import BarChart from "./common/BarChart";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { IoMdMail, IoMdTime } from "react-icons/io";
 import { GiDwarfFace } from "react-icons/gi";
 import { HiDotsVertical } from "react-icons/hi";
-import Bar from "./common/Bar";
-import CircleChart from "./common/CircleChart";
+import { Bar, CircleChart } from "react-charts-sm";
 
 const Dashboard = () => {
   const months = [
@@ -28,6 +25,25 @@ const Dashboard = () => {
   ];
 
   const days = ["Yesterday", "Today"];
+
+  const barChartData = [
+    {
+      percent: "92",
+      title: "Algorithms structures",
+    },
+    {
+      percent: "83",
+      title: "Object program",
+    },
+    {
+      percent: "78",
+      title: "Database program",
+    },
+    {
+      percent: "97",
+      title: "Web develop",
+    },
+  ];
 
   const doughnutData = [
     {
@@ -112,30 +128,15 @@ const Dashboard = () => {
                       </button>
                     </div>
                     <div className="bar-chart mt-3 d-flex">
-                      <Bar
-                        value={70}
-                        label={"Object program"}
-                        barColor={"#5a77df"}
-                        barFillColor={"#3e53a0"}
-                      />
-                      <Bar
-                        value={30}
-                        label={"Object program"}
-                        barColor={"#5a77df"}
-                        barFillColor={"#3e53a0"}
-                      />
-                      <Bar
-                        value={90}
-                        label={"Object program"}
-                        barColor={"#5a77df"}
-                        barFillColor={"#3e53a0"}
-                      />
-                      <Bar
-                        value={50}
-                        label={"Object program"}
-                        barColor={"#5a77df"}
-                        barFillColor={"#3e53a0"}
-                      />
+                      {barChartData.map((barData) => (
+                        <Bar
+                          key={barData.title}
+                          value={barData.percent}
+                          label={barData.title}
+                          barColor={"#5a77df"}
+                          barFillColor={"#3e53a0"}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -221,10 +222,12 @@ const Dashboard = () => {
                         key={chartData.title}
                         className="w-50 d-flex flex-column justify-content-center align-items-center"
                       >
-                        {/* <DoughnutChart chartData={chartData} /> */}
                         <CircleChart
+                          radius={50}
+                          strokeWidth={20}
                           percentage={chartData.percent}
-                          label={chartData.title}
+                          // label={chartData.title}
+                          progressColor="#5a77df"
                         />
                       </div>
                     ))}
