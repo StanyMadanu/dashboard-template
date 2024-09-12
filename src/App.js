@@ -13,7 +13,6 @@ import Lessons from "./components/Lessons";
 import Materials from "./components/Materials";
 import Schedule from "./components/Schedule";
 import Settings from "./components/Settings";
-import Bar from "./components/common/Bar";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import ProtectedRoute from "./ProtectedRoute";

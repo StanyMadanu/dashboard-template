@@ -223,7 +223,7 @@ const Dashboard = () => {
                         className="w-50 d-flex flex-column justify-content-center align-items-center"
                       >
                         <CircleChart
-                          radius={50}
+                          radius={40}
                           strokeWidth={20}
                           percentage={chartData.percent}
                           // label={chartData.title}

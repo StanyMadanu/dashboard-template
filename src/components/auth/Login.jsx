@@ -15,8 +15,8 @@ class Login extends Form {
       email: "",
       password: "",
     },
-    last_ip: "", 
-    device_id: "", 
+    last_ip: "",
+    device_id: "",
     browser_id: "",
     fcm_token: "staging",
     errors: {},
@@ -77,7 +77,7 @@ class Login extends Form {
   fetchIPAddress = async () => {
     try {
       const ip = await publicIpv4(); // Fetch public IPv4
-    //   console.log("IP Address:", ip);
+      //   console.log("IP Address:", ip);
       this.setState({ last_ip: ip });
     } catch (error) {
       console.error("Failed to fetch IP address", error);
@@ -158,9 +158,9 @@ class Login extends Form {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-sm-12 col-md-8 col-lg-4 col-12">
-              <div className="bg-white p-4 rounded-4">
+              <div className="auth-card p-4 rounded-4">
                 <form onSubmit={this.handleSubmit}>
-                  <h1 className="h3 mb-3 fw-semibold">Please sign in</h1>
+                  <h1 className="mb-4 fw-semibold text-center">sign in</h1>
 
                   {/* Email */}
                   <div className="form-floating mb-4">
@@ -176,7 +176,9 @@ class Login extends Form {
                       true
                     )}
                     {errors.email && (
-                      <div className="text-danger">{errors.email}</div>
+                      <div className="text-danger errorsClass">
+                        {errors.email}
+                      </div>
                     )}
                   </div>
 
@@ -200,12 +202,17 @@ class Login extends Form {
                       ></i>
                     </div>
                     {errors.password && (
-                      <div className="text-danger">{errors.password}</div>
+                      <div className="text-danger errorsClass">
+                        {errors.password}
+                      </div>
                     )}
                   </div>
 
                   <div className="text-end mb-3 fs-16">
-                    <Link to="/forgotpassword" className="text-default">
+                    <Link
+                      to="/forgotpassword"
+                      className="text-default text-decoration-underline"
+                    >
                       Forgot Password?
                     </Link>
                   </div>
@@ -221,7 +228,7 @@ class Login extends Form {
                       Don't have an account?
                       <Link
                         to="/register"
-                        className="text-primary text-decoration-underline"
+                        className="text-dark text-decoration-underline"
                       >
                         {" "}
                         Sign Up

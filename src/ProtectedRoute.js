@@ -5,6 +5,7 @@ import authService from "./services/authService";
 
 const ProtectedRoute = ({ element }) => {
   const isAuthenticated = authService.getCurrentUser(); 
+  console.log(element,"akashssssS")
 
   return isAuthenticated ? element : <Navigate to="/login" />;
 };
