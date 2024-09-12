@@ -1,0 +1,34 @@
+.auth-pages {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control-position {
+  position: absolute;
+  top: 0.438rem;
+  right: 0.75rem;
+  opacity: 0.75;
+  z-index: 2;
+  display: block;
+  text-align: center;
+}
+.cursor {
+  cursor: pointer;
+}
+.fa-regular,
+.far {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+}
+
+.errorsClass {
+  line-height: 1rem;
+  font-size: 0.875rem;
+  text-transform: lowercase;
+}
+
+.Toastify__toast {
+  z-index: 9999 !important;
+}

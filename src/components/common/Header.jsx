@@ -5,13 +5,20 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import { MdNotifications } from "react-icons/md";
 import { IoMdMail } from "react-icons/io";
 import Dropdown from "./Dropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoMdSettings } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import authService from "../../services/authService";
 
 const Header = ({ setToggleStatus, toggleStatus }) => {
   const profile = ["profile", "logout"];
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    authService.logout();
+    navigate("/");
+  };
 
   return (
     <section className="header-main mb-4 fixed-top top-0 left-0 right-0">
@@ -71,7 +78,11 @@ const Header = ({ setToggleStatus, toggleStatus }) => {
                   <div className="d-flex align-items-center py-2 gap-2">
                     <MdLogout />
                     <li>
-                      <Link to="#!" className="dropdown-item fs-13 p-0">
+                      <Link
+                        to="#!"
+                        onClick={handleLogout}
+                        className="dropdown-item fs-13 p-0"
+                      >
                         Logout
                       </Link>
                     </li>
